@@ -1,0 +1,43 @@
+1) Посмотреть где я: pwd
+2) Создать папку: mkdir hometask1_firstpart
+3) Зайти в папку: cd hometask1_firstpart
+4) Создать 3 папки: mkdir dir1 dir2 dir3
+5) Зайти в любую папку: cd dir1
+6) Создать 5 файлов (3 txt, 2 json): touch qa1.txt qa2.txt qa3.txt first.json second.json
+7) Создать 3 папки: mkdir folder1 folder2 folder3
+8) Вывести список содержимого папки: ls -la
+9) + Открыть любой txt файл: vim  qa1.txt  
+10) + написать туда что-нибудь, любой текст: INSERT Hello, world!
+11) + сохранить и выйти: ESC : wq ENTER
+12) Выйти из папки на уровень выше: cd ../
+13) переместить любые 2 файла, которые вы создали, в любую другую папку: mv dir1/{qa1.txt,qa2.txt} dir2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку: cp dir1/{first.json,second.json} dir2
+15) Найти файл по имени: find . -name "*.json"
+16) вывести несколько первых строк из текстового файла: head -3 dir2/ qa1.txt  
+17) вывести несколько последних строк из текстового файла: tail -3 dir2/ qa1.txt  
+18) просмотреть содержимое длинного файла (команда less), изучите как она работает:  less  dir1/bag.txt
+19) вывести дату и время: date
+
+Задание *
+1) Отправить http запрос на сервер. http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=Your_String&age=Your_number"
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+- Создаем файл script.txt с использованием команды touch. 
+- Входим в режим редактирования: cat >> script.txt
+- В его первой строке нужно указать, какую именно оболочку мы собираемся использовать:
+#!/bin/bash 
+- Вводим команды которые нам необходимы для реализации скрипта (команды отделяются переходом на другую строку), комментарии к командам при необходимости пишутся c использованием команды echo  “   ” 
+cd hometask1_firstpart
+mkdir dir1 dir2 dir3
+cd dir1
+touch qa1.txt qa2.txt qa3.txt first.json second.json
+mkdir folder1 folder2 folder3
+ls -la
+mv {qa1.txt,qa2.txt} folder1 
+- Сохраняем: ENTER, а затем CTRL+C
+- Делаем файл исполняемым (в консоли)
+chmod +x ./script.txt
+- Запускаем скрипт
+./script.txt - работает 
+
